@@ -536,8 +536,8 @@ label.valid{
     color:#D92C85;
 }
 
-.btn-instagram:hover{
-    color:#BAB1A8;
+.btn-github:hover{
+    color: black;
 }
 
 .btn-linkedin:hover{
@@ -622,5 +622,41 @@ label.valid{
     width: 300px;
     height: 300px;
     }
+
+
+
+    /* Blue - #3498db */
+
+
+a:link,a:visited,.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:focus,a:hover,a:active,.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus{
+  color:#3498db;
+}
+
+.spacer,.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus,#grid .mix .overlay {
+
+background: #3498db;
+}
+
+#page-contact{
+  background: #3498db;
+  color:#fff;
+}
+
+#page-contact .spacer{
+  background: #fff;
+}
+
+#page-contact .section-title{
+  color:#fff;
+}
+
+.btn.btn-default:hover,
+.btn.btn-default:active{
+    color:#3498db;
+}
+
 
 
