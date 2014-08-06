@@ -123,10 +123,14 @@ background-color: transparent;
     background:#fff;
 }
 
+.profile {
+  border-radius: 5px;
+}
+
 #page-profile .profile{
     border: 5px solid #333;
-    width:225px;
-    height:225px;
+    width: 350px;
+    height: 350px;
     margin: 0 20px 20px 0;
    
 }
