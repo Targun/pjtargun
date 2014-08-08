@@ -608,11 +608,11 @@ label.valid{
 @media  (max-width: 479px) {
     
     #page-welcome header h1 {
-        font-size: 2em;
+        font-size: 3.2em;
     }
 
     #page-welcome header p {
-        font-size: 1em;
+        font-size: 1.6em;
        line-height: 3em;
     }
        .section-title {
@@ -692,6 +692,12 @@ height: auto;
 z-index: -100;
 background-size: cover;
 }
+
+
+
+
+
+
 
 
 
