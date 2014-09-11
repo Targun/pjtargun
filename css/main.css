@@ -1319,9 +1319,20 @@ PJ Targun and Targun Build*/
   width: 110px;
   position: relative;
   top: -35px;
-  left: -8px;
+  left: 10px;
 }
 
+@media (max-width: 520px) {
+  .logo {
+    width: 60px;
+    top: -71px;
+    left: -90px;
+  }
+  .profile {
+    width: 110px;
+    top: -5px;
+  }
+}
 
 /*Arsenal*/
 .row-arsenal {
@@ -1338,7 +1349,7 @@ PJ Targun and Targun Build*/
 }
 
 .arsenal-circle:hover {
-  border: 3px solid #666;
+  border: 3px solid #1C2838;
 }
 
 .arsenal-icon {
@@ -1348,7 +1359,7 @@ PJ Targun and Targun Build*/
 }
 
 .arsenal-icon:hover {
-  color: #666;
+  color: #1C2838;
   font-size: 4.5rem;
 }
 
