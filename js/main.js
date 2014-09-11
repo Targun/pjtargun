@@ -1,129 +1,171 @@
+var jPM = {};
 
-$(document).ready(function(){
+$(function() {
 
+    jPM = $.jPanelMenu({
 
-/* Scroll hire me button to contact page */
-	$('.hire-me').click(function(){
-		    $('html, body').animate({
-        		scrollTop: $( $(this).attr('href') ).offset().top
-    		}, 500);
-    	return false;
-	});
+        menu : '#menu',
+        trigge : '.menu-trigger',
+        animated: false,
+        beforeOpen : ( function() {
 
-    /* For Bootstrap current state on portfolio sorting */
-
-    $('ul.nav-pills li a').click(function (e) {
-        $('ul.nav-pills li.active').removeClass('active')
-        $(this).parent('li').addClass('active')
-    })
-
-/* portfolio mixitup */
-
-	$(window).load(function(){
-    var $container = $('.grid-wrapper');
-    $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
- 
-    $('.grid-controls li a').click(function(){
-        $('.grid-controls .current').removeClass('current');
-        $(this).addClass('current');
- 
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
+            if (matchMedia('only screen and (min-width: 992px)').matches) {
+                $('.sidebar').css("left", "250px");
             }
-         });
-         return false;
+
+        }),
+        beforeClose : ( function() {
+
+            $('.sidebar').css("left", "0");
+            $('.writer-icon, .side-writer-icon').removeClass("fadeOutUp");
+        })
     });
-});
 
+    jPM.on();
 
-/* Magnific Popup */
-$('.grid-wrapper').magnificPopup({
-		  delegate: 'a', 
-		  type: 'image',
-		  gallery:{
-			enabled:true
-		  }
-		});
+    $('.select-posts, .select-categories').on('click', function () {
 
+        $('.home-page-posts').toggleClass("hide");
+        $('.home-page-categories').toggleClass("hide");
 
+        $('.select-posts').toggleClass("active");
+        $('.select-categories').toggleClass("active");
 
-/* Sticky menu */
-$(".navbar").sticky({topSpacing: 0});
+        $('.home-footer').toggleClass("hide");
+    });
 
+    $('.writer-icon').on('click', function () {
+        $(this).addClass("fadeOutUp");
 
-/* Scroll spy and scroll filter */
-    $('#main-menu').onePageNav({
-        currentClass: "active",
-        changeHash: false,
-        scrollThreshold: 0.5,
-        scrollSpeed: 750,
-        filter: "",
-        easing: "swing"	
-     });
+    });
 
-/* Charts*/
-    
-$('.chart').waypoint(function() {
-    $(this).easyPieChart({
-    	   barColor: '#3498db',
-    	   size: '150',
-			easing: 'easeOutBounce',
-			onStep: function(from, to, percent) {
-				$(this.el).find('.percent').text(Math.round(percent));
-			}
-	 });
-}, {
-  triggerOnce: true,
-  offset: 'bottom-in-view'
-});
+    var graphData = [{
+        // Visits
+        data: [ [11, 540], [12, 600], [13,645], [14, 672], [15, 591], [16, 789], [17, 794], [18, 732], [19, 600],[20, 520], [21, 500] ],
+        color: '#69d193'
+    }, {
+        // Returning Visits
+        data: [ [11, 500], [12, 523], [13, 530], [14, 423], [15, 543], [16, 624], [17, 732], [18, 580],[19, 580], [20, 430], [21, 450] ],
+        color: '#4761e2',
+        points: { radius: 4, fillColor: '#4761e2' }
+    }
+    ];
 
+    if( $('#graph-lines').length > 0 ) {
 
-/* VEGAS Home Slider */
-	
-
-
-
-/*Contact form */
-      $('#contact-form').validate({
-        rules: {
-            name: {
-                minlength: 2,
-                required: true
+        $.plot($('#graph-lines'), graphData, {
+            series: {
+                points: {
+                    show: true,
+                    radius: 5
+                },
+                lines: {
+                    show: true
+                },
+                shadowSize: 0
             },
-            email: {
-                required: true,
-                email: true
+            grid: {
+                color: '#646464',
+                borderColor: 'transparent',
+                borderWidth: 20,
+                hoverable: true
             },
-            message: {
-                minlength: 2,
-                required: true
+            xaxis: {
+                tickColor: 'transparent',
+                tickDecimals: 0
+            },
+            yaxis: {
+                tickSize: 100,
+                label: "Price (USD)"
             }
-        },
-        highlight: function (element) {
-            $(element).closest('.control-group').removeClass('success').addClass('error');
-        },
-        success: function (element) {
-            element.text('OK!').addClass('valid')
-                .closest('.control-group').removeClass('error').addClass('success');
+        });
+
+        // Bars
+        $.plot($('#graph-bars'), graphData, {
+            series: {
+                bars: {
+                    show: true,
+                    barWidth: 0.9,
+                    align: 'center'
+                },
+                shadowSize: 0
+            },
+            grid: {
+                color: '#646464',
+                borderColor: 'transparent',
+                borderWidth: 20,
+                hoverable: true
+            },
+            xaxis: {
+                tickColor: 'transparent',
+                tickDecimals: 0
+            },
+            yaxis: {
+                tickSize: 1000
+            }
+        });
+        $('#graph-bars').hide();
+
+        $('#lines').on('click', function (e) {
+            $('#bars').removeClass('active');
+            $('#graph-bars').fadeOut();
+            $(this).addClass('active');
+            $('#graph-lines').fadeIn();
+            e.preventDefault();
+        });
+
+        $('#bars').on('click', function (e) {
+            $('#lines').removeClass('active');
+            $('#graph-lines').fadeOut();
+            $(this).addClass('active');
+            $('#graph-bars').fadeIn().removeClass('hidden');
+            e.preventDefault();
+        });
+
+        function showTooltip(x, y, contents) {
+            $('<div id="tooltip">' + contents + '</div>').css({
+                top: y - 16,
+                left: x + 20
+            }).appendTo('.container').fadeIn();
         }
-    }); 
 
+        var previousPoint = null;
 
-    google.maps.event.addListener(map,'mouseover',function(e){
-        $('html, body').stop();
-    });
+        $('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
+            if (item) {
+                if (previousPoint != item.dataIndex) {
+                    previousPoint = item.dataIndex;
+                    $('#tooltip').remove();
+                    var x = item.datapoint[0],
+                        y = item.datapoint[1];
+                        showTooltip(item.pageX, item.pageY, y + ' readers on the' + x + 'th');
+                }
+            } else {
+                $('#tooltip').remove();
+                previousPoint = null;
+            }
+        });
 
+        $('.chart-visitors').easyPieChart({
+            animate: 3000,
+            barColor : '#4761e2',
+            lineWidth : 20,
+            lineCap: 'butt',
+            size: 150
+        });
+
+        $('.chart-downloads').easyPieChart({
+            animate: 4200,
+            barColor : '#4761e2',
+            lineWidth : 20,
+            lineCap: 'butt',
+            size: 150
+        });
+
+    }//end check if graph exists
+
+    var fullHeight = $(window).height();
+
+    $('.hero-image-404').css("height", fullHeight );
 
 });

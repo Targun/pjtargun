@@ -1,0 +1,197 @@
+/*All Site*/
+
+.section-title {
+	margin-top: 20px;
+}
+
+.main-title {
+	font-size: 2.7rem;
+}
+
+.section-subtitle {
+	font-size: 1.5rem;
+}
+
+.spacer {
+	border-bottom: solid 1px whitesmoke;
+}
+
+.content {
+	font-size: 1rem;
+}
+
+.social {
+	margin: 20px 0;
+}
+
+.social a {
+	border: none;
+	font-size: 2.5rem;
+	color: #fff;
+}
+
+.fa-github:hover {
+	color: #000;
+}
+.fa-twitter:hover {
+	color: #4099FF;
+}
+.fa-linkedin-square:hover {
+	color: #007bb6;
+}
+.fa-facebook-square:hover {
+	color: #3B5998;
+}
+
+.button {
+	float: right;
+	padding-right: 40px;
+}
+
+.contact {
+	width: 90%;
+	margin: 5px 0;
+}
+
+/*Font Page*/
+.profile {
+	width: 140px;
+	border-radius: 1%;
+	position: relative;
+	top: -27px;
+	left: 0px;
+}
+
+/*Form Styles*/
+
+.submit-btn {
+	background-color: #428bca;
+	border: none;
+	color: #fff;
+}
+
+.submit-btn:hover {
+	background-color: #4761e2;
+}
+
+.msg {
+	height: 60px;
+}
+
+
+/*Targun Build*/
+
+.text-big {
+	font-size: 1.3rem;
+}
+
+.text-small {
+	font-size: .9rem;
+}
+
+.logo {
+	width: 110px;
+	position: relative;
+	top: -35px;
+	left: -8px;
+}
+
+
+/*Arsenal*/
+.row-arsenal {
+	text-align: center;
+}
+
+.arsenal-circle {
+	height: 90px;
+	width: 90px;
+	margin: 10px auto;
+	border: 2px solid #999;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.arsenal-circle:hover {
+	border: 3px solid #666;
+}
+
+.arsenal-icon {
+	line-height: 90px;
+	font-size: 4rem;
+	color: #999;
+}
+
+.arsenal-icon:hover {
+	color: #666;
+	font-size: 4.5rem;
+}
+
+/*Process*/
+
+.row-process {
+	width: 100%;
+	margin: 15px 7%;
+	text-align: center;
+}
+
+.process-circle {
+	height: 70px;
+	width: 70px;
+	margin: 8px auto;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.process-circle:hover {
+	height: 74px;
+	width: 74px;	
+}
+
+.process-icon {
+	color: #fff;
+	font-size: 3.5rem;
+	line-height: 70px;
+}
+
+.process-icon:hover {
+	font-size: 2.8rem;
+	line-height: 74px;	
+}
+
+.p-one {
+	background-color: #D7D7D7;
+}
+.p-two {
+	background-color: #B7B7B7;
+}
+.p-three {
+	background-color: #A0A0A0;
+}
+.p-four {
+	background-color: #898989;
+}
+.p-five {
+	background-color: #F05F18;
+}
+
+.process-line {
+	border: 2px dashed #F05F18;
+	width: 65%;
+	position: relative;
+	top: 40px;
+	left: 30px;
+	z-index: -100;
+}
+
+.build-btn {
+	background-color: #F05F18;
+}
+
+
+
+
+
+
+
+
+
