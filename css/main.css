@@ -1334,8 +1334,9 @@ PJ Targun and Targun Build*/
     left: -90px;
   }
   .profile {
-    width: 110px;
-    top: -5px;
+    width: 90px;
+    top: -28px;
+    left: -16px;
   }
 }
 
@@ -1427,6 +1428,17 @@ PJ Targun and Targun Build*/
 
 .build-btn {
   background-color: #F05F18;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  padding-top: 20px
+}
+
+.charles {
+  font-size: 1.1rem;
+  padding-bottom: 10px;
 }
 
 
