@@ -147,6 +147,7 @@ $(function() {
         });
 
         $('.chart-visitors').easyPieChart({
+            //share This is just a test! AHHHHH!
             animate: 3000,
             barColor : '#4761e2',
             lineWidth : 20,
