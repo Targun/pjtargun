@@ -1262,7 +1262,7 @@ PJ Targun and Targun Build*/
 }
 
 .fa-github:hover {
-  color: #000;
+  color: #A6A8AB;
 }
 .fa-twitter:hover {
   color: #4099FF;
@@ -1272,6 +1272,10 @@ PJ Targun and Targun Build*/
 }
 .fa-facebook-square:hover {
   color: #3B5998;
+}
+
+.fa-medium:hover {
+  color: #A6A8AB;
 }
 
 .button {
